@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+<base-config cleartextTrafficPermitted="true">
+    <trust-anchors>
+        <!-- 여기에 인증서를 포함하거나, 테스트 목적으로 모든 인증서를 신뢰할 수 있도록 설정 -->
+        <certificates src="system" />
+    </trust-anchors>
+</base-config>
+</network-security-config>

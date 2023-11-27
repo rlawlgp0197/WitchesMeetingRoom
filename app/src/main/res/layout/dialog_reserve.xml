@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_reserve_background"
+    android:padding="15dp"
+    android:layout_gravity="bottom">
+
+    <TextView
+        android:id="@+id/dialog_bar"
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:background="@drawable/bottom_dialog_bar"
+        app:layout_constraintBottom_toTopOf="@id/meetText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/meetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="회의실 예약"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_bar" />
+
+    <TextView
+        android:id="@+id/dayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/day_background"
+        android:fontFamily="@font/neo_eb"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="5dp"
+        android:text="2023년 11월 14일"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meetText" />
+
+    <TextView
+        android:id="@+id/essentialText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*는 필수 입력 사항입니다."
+        android:textColor="@color/essential"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dayText" />
+
+    <TextView
+        android:id="@+id/reserveText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*예약시간"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/essentialText" />
+
+
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neo_eb"
+        android:text="시작시간"
+        android:textColor="@color/navy"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveText"
+        app:layout_constraintEnd_toEndOf="@+id/start"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toTopOf="@+id/reserveText"
+        app:layout_constraintWidth_percent="0.15" />
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/start"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@drawable/spinner_background"
+        android:popupBackground="#DEDEDE"
+        android:popupElevation="10dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveText"
+        app:layout_constraintEnd_toStartOf="@+id/hyphen"
+        app:layout_constraintStart_toEndOf="@+id/reserveText"
+        app:layout_constraintTop_toTopOf="@+id/reserveText"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/hyphen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="-"
+        android:textColor="@color/dialogText"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/start"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toEndOf="@+id/start"
+        app:layout_constraintTop_toTopOf="@+id/start" />
+
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neo_eb"
+        android:text="종료시간"
+        android:textColor="@color/navy"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hyphen"
+        app:layout_constraintEnd_toEndOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/end"
+        app:layout_constraintTop_toTopOf="@+id/hyphen"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/end"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/spinner_background"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/hyphen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hyphen"
+        app:layout_constraintTop_toTopOf="@+id/hyphen"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="15dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reserveText" />
+
+    <TextView
+        android:id="@+id/userText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*신청인"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/reserveText"
+        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/neo_eb"
+        android:hint="이름"
+        android:imeOptions="actionGo"
+        android:inputType="textImeMultiLine|textNoSuggestions"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/line2"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/departmentText"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.2"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/neo_eb"
+        android:text="*부서"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@id/nameEdit"
+        app:layout_constraintTop_toTopOf="@id/userText" />
+
+    <TextView
+        android:id="@+id/departmentSpinnerText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neo_eb"
+        android:text="부서선택"
+        android:textAlignment="center"
+        android:textColor="@color/navy"
+        android:textSize="12sp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/userText"
+        app:layout_constraintEnd_toEndOf="@id/departmentSpinner"
+        app:layout_constraintStart_toStartOf="@+id/departmentSpinner"
+        app:layout_constraintTop_toTopOf="@+id/userText"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/departmentSpinner"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/spinner_background"
+        android:overlapAnchor="false"
+        app:layout_constraintBottom_toBottomOf="@id/userText"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintTop_toTopOf="@+id/userText"
+
+        app:layout_constraintWidth_percent="0.27" />
+
+    <ImageView
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userText" />
+
+    <TextView
+        android:id="@+id/peopleNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*사용인원"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/reserveText"
+        app:layout_constraintTop_toBottomOf="@id/line2" />
+
+    <EditText
+        android:id="@+id/peopleNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/neo_eb"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/line3"
+        app:layout_constraintStart_toStartOf="@id/nameEdit"
+        app:layout_constraintTop_toTopOf="@id/line2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="명"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@id/peopleNum"
+        app:layout_constraintTop_toTopOf="@id/peopleNumText" />
+
+    <ImageView
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/peopleNumText" />
+
+    <TextView
+        android:id="@+id/contentsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*회의내용 및 참여인원"
+        android:textColor="@color/dialogText"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/reserveText"
+        app:layout_constraintTop_toBottomOf="@id/line3" />
+
+    <TextView
+        android:id="@+id/maxLengthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neo_eb"
+        android:text="(100자 이내)"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/dialogText"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/contentsText"
+        app:layout_constraintBottom_toBottomOf="@id/contentsText" />
+
+
+    <EditText
+        android:id="@+id/contentsEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="#C8C8C8"
+        android:fontFamily="@font/neo_eb"
+        android:gravity="top"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLength="100"
+        android:maxLines="5"
+        android:minLines="5"
+        android:padding="10dp"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/contentsText"
+        app:layout_constraintTop_toBottomOf="@id/contentsText" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/navy"
+        android:fontFamily="@font/neo_eb"
+        android:text="예약완료"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentsEdit"
+        app:layout_constraintWidth_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

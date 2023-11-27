@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_day_background"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/warn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/warning"
+        app:layout_constraintStart_toStartOf="@id/reasonText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/warningText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="예약취소"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/warn"
+        app:layout_constraintStart_toEndOf="@id/warn"
+        app:layout_constraintTop_toTopOf="@id/warn" />
+
+    <TextView
+        android:id="@+id/essentialText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="*는 필수 입력 사항입니다."
+        android:textColor="@color/essential"
+        android:textSize="10sp"
+        app:layout_constraintTop_toTopOf="@id/warn"
+        app:layout_constraintEnd_toEndOf="@id/reasonEdit" />
+
+    <TextView
+        android:id="@+id/cancleNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neo_eb"
+        android:text="*취소자"
+        android:textColor="@color/dialogText"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/reasonText"
+        app:layout_constraintStart_toStartOf="@id/reasonEdit"
+        app:layout_constraintTop_toBottomOf="@id/warn" />
+
+    <EditText
+        android:id="@+id/cancleNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:hint="이름"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:minLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/cancleNameText"
+        app:layout_constraintEnd_toEndOf="@id/reasonText"
+        app:layout_constraintStart_toEndOf="@id/cancleNameText"
+        app:layout_constraintTop_toTopOf="@id/cancleNameText" />
+
+
+    <TextView
+        android:id="@+id/reasonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="취소사유를 적어주세요"
+        android:textColor="@color/dialogText"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/reasonEdit"
+        app:layout_constraintTop_toBottomOf="@id/cancleNameText" />
+
+    <EditText
+        android:id="@+id/reasonEdit"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:background="#DDDDDD"
+        android:fontFamily="@font/neo_eb"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reasonText" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reasonEdit"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/noButton"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/no_btn"
+            android:fontFamily="@font/neo_eb"
+            android:text="닫기"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yesButton"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:background="@drawable/yes_btn"
+            android:fontFamily="@font/neo_eb"
+            android:imeOptions="actionDone"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_day_background"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/witches_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="이름 설정"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/logo"
+        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintTop_toTopOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/explainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:text="신청 및 취소에 사용하실 이름을 작성해 주세요."
+        android:textColor="@color/dialogText"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <EditText
+        android:id="@+id/nameEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/neo_eb"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:minLines="1"
+        android:hint="사용자 이름"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/drawable_et_cursor"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/explainText"
+        app:layout_constraintStart_toStartOf="@id/explainText"
+        app:layout_constraintTop_toBottomOf="@id/explainText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBtn"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/yes_btn"
+        android:fontFamily="@font/neo_eb"
+        android:text="저장"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/explainText"
+        app:layout_constraintStart_toStartOf="@id/explainText"
+        app:layout_constraintTop_toBottomOf="@id/nameEdit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
